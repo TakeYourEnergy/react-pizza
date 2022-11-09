@@ -1,0 +1,32 @@
+@import '../../mixins/mixins.scss';
+
+.boxInput {
+	display: flex;
+	padding: 12px 20px 12px 42px;
+	max-width: 400px;
+	align-items: center;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	justify-content: space-between;
+	gap: 15px;
+}
+
+.inputIcons,
+.inputMark {
+	@include text-400;
+	width: 22px;
+	height: 22px;
+	opacity: 0.3;
+}
+
+.inputMark {
+	cursor: pointer;
+}
+
+.input {
+	@include text-400;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	max-width: 250px;
+}
