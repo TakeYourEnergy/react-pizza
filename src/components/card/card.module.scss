@@ -1,0 +1,72 @@
+@import '../../mixins/mixins.scss';
+
+.addBox {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: space-between;
+}
+
+.addIcon {
+	@include text-700;
+	color: #eb5a1e;
+}
+
+.addText {
+	@include text-700;
+}
+
+.addNumber {
+	width: 22px;
+	height: 22px;
+	background: #eb5a1e;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.addNumberText {
+	@include text-700;
+	color: #ffffff;
+	text-align: center;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.img {
+	width: 260px;
+	height: 260px;
+	object-fit: contain;
+	margin-bottom: 10px;
+}
+
+.title {
+	@include text-800;
+	margin: 0 0 22px 0;
+	font-size: 15px;
+	text-align: center;
+}
+
+.boxPrice {
+	display: flex;
+	align-items: center;
+}
+
+.boxPriceText {
+	display: flex;
+	align-items: center;
+	margin-right: 35px;
+}
+
+.priceIcon,
+.price {
+	@include text-700;
+	margin: 0;
+	font-size: 22px;
+}

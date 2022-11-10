@@ -4,6 +4,7 @@ import styles from './header.module.scss';
 import { BiRuble } from 'react-icons/bi';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { Input } from '../input/Input';
+import pizza from '../../assets/pizza.svg';
 
 export const Header = () => {
 	const handleInputClick = () => {
@@ -13,7 +14,7 @@ export const Header = () => {
 	return (
 		<header className={styles.header}>
 			<div className={styles.logo}>
-				<img className={styles.logoImg} src='' alt='' />
+				<img className={styles.logoImg} src={pizza} alt='pizza' />
 				<div className={styles.logoText}>
 					<p className={styles.logoTitle}>REACT PIZZA</p>
 					<p className={styles.logoSubtitle}>самая вкусная пицца во вселенной</p>
