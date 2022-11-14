@@ -1,19 +1,21 @@
 import React from 'react';
 import styles from './Main.module.scss';
-import pizza from '../../utils/pizza.json';
 import { Card } from '../card/Card';
-console.log(pizza);
+import { useAppSelector } from '../../redux-store/redux-hooks';
 
 export const Main = () => {
+	const { entities, loading } = useAppSelector(state => state.productsListReducer);
+
 	return (
 		<main className={styles.main}>
-			<h1 className={styles.title}>Все пиццы</h1>
+			<h1 className={styles.title}>Все товары</h1>
 			<div className={styles.cards}>
-				{pizza.map(item => {
-					return (
-						<Card key={item.id} imageUrl={item.imageUrl} title={item.title} price={item.price} />
-					);
-				})}
+				{entities &&
+					entities.products.map(item => {
+						return (
+							<Card key={item.id} imageUrl={item.images} title={item.title} price={item.price} />
+						);
+					})}
 			</div>
 		</main>
 	);

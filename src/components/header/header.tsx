@@ -16,11 +16,11 @@ export const Header = () => {
 			<div className={styles.logo}>
 				<img className={styles.logoImg} src={pizza} alt='pizza' />
 				<div className={styles.logoText}>
-					<p className={styles.logoTitle}>REACT PIZZA</p>
-					<p className={styles.logoSubtitle}>самая вкусная пицца во вселенной</p>
+					<p className={styles.logoTitle}>REACT SHOP</p>
+					<p className={styles.logoSubtitle}>самый лучший магазин во вселенной</p>
 				</div>
 			</div>
-			<Input placeholder='Поиск пиццы...' type='text' onClick={handleInputClick} />
+			<Input placeholder='Поиск товара...' type='text' onClick={handleInputClick} />
 			<Button disabled={false} type='button' size='middle'>
 				<div className={styles.boxPrice}>
 					<p className={styles.price}>520</p>

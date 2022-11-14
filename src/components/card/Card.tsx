@@ -4,9 +4,10 @@ import { TypesPizza } from '../types-pizza/TypesPizza';
 import styles from './card.module.scss';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { BiRuble } from 'react-icons/bi';
+import { Slider } from '../slider/slider';
 
 interface ICard {
-	imageUrl: string;
+	imageUrl: string[];
 	title: string;
 	price: number;
 }
@@ -20,7 +21,7 @@ export const Card: FC<ICard> = ({ imageUrl, title, price }) => {
 
 	return (
 		<div className={styles.card}>
-			<img className={styles.img} src={imageUrl} alt={title} />
+			<Slider imageUrl={imageUrl} alt={title} />
 			<h2 className={styles.title}>{title}</h2>
 			<TypesPizza />
 			<div className={styles.boxPrice}>
