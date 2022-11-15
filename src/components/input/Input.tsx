@@ -2,6 +2,8 @@ import React, { FC, useState } from 'react';
 import styles from './Input.module.scss';
 import { BiSearchAlt } from 'react-icons/bi';
 import { HiOutlineXMark } from 'react-icons/hi2';
+import { useAppDispatch, useAppSelector } from '../../redux-store/redux-hooks';
+import { setInput } from '../../redux-store/input-slice/inputSlice';
 
 interface IInput {
 	placeholder: string;
@@ -10,14 +12,19 @@ interface IInput {
 }
 
 export const Input: FC<IInput> = ({ placeholder, type, onClick }) => {
-	const [state, setState] = useState('');
+	const inputValue = useAppSelector(state => state.inputReducer.search);
+	const dispatch = useAppDispatch();
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		dispatch(setInput(e.target.value));
+	};
 
 	return (
 		<div className={styles.boxInput}>
 			<BiSearchAlt className={styles.inputIcons} />
 			<input
-				value={state}
-				onChange={e => setState(e.target.value)}
+				value={inputValue}
+				onChange={handleChange}
 				className={styles.input}
 				placeholder={placeholder}
 				type={type}

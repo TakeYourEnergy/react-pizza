@@ -46,7 +46,7 @@ export const Slider: FC<ISlader> = ({ imageUrl, alt }) => {
 				modules={[EffectFade, Navigation, Pagination]}
 				className='mySwiper'
 			>
-				{imageUrl &&
+				{imageUrl.length &&
 					imageUrl.map(img => {
 						return (
 							<SwiperSlide key={nanoid()}>

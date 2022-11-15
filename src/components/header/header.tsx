@@ -5,10 +5,14 @@ import { BiRuble } from 'react-icons/bi';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { Input } from '../input/Input';
 import pizza from '../../assets/pizza.svg';
+import { useAppDispatch } from '../../redux-store/redux-hooks';
+import { clearInput } from '../../redux-store/input-slice/inputSlice';
 
 export const Header = () => {
+	const dispatch = useAppDispatch();
+
 	const handleInputClick = () => {
-		// console.log('clear')
+		dispatch(clearInput());
 	};
 
 	return (
