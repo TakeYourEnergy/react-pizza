@@ -1,6 +1,5 @@
 import React, { useState, FC } from 'react';
 import { Button } from '../button/Button';
-import { TypesPizza } from '../types-pizza/TypesPizza';
 import styles from './card.module.scss';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { BiRuble } from 'react-icons/bi';
@@ -23,7 +22,6 @@ export const Card: FC<ICard> = ({ imageUrl, title, price }) => {
 		<div className={styles.card}>
 			<Slider imageUrl={imageUrl} alt={title} />
 			<h2 className={styles.title}>{title}</h2>
-			<TypesPizza />
 			<div className={styles.boxPrice}>
 				<div className={styles.boxPriceText}>
 					<p className={styles.price}>{price}</p>

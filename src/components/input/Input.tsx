@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import styles from './Input.module.scss';
 import { BiSearchAlt } from 'react-icons/bi';
-import { HiOutlineXMark } from 'react-icons/hi2';
+import { HiXMark } from 'react-icons/hi2';
 import { useAppDispatch, useAppSelector } from '../../redux-store/redux-hooks';
 import { setInput } from '../../redux-store/input-slice/inputSlice';
 
@@ -29,7 +29,7 @@ export const Input: FC<IInput> = ({ placeholder, type, onClick }) => {
 				placeholder={placeholder}
 				type={type}
 			/>
-			<HiOutlineXMark onClick={onClick} className={styles.inputMark} />
+			<HiXMark onClick={onClick} className={styles.inputMark} />
 		</div>
 	);
 };

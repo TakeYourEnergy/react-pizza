@@ -5,7 +5,13 @@ import { useAppSelector } from '../../redux-store/redux-hooks';
 import { Spinner } from '../spinner/Spinner';
 
 export const Main = () => {
-	const { entities, loading } = useAppSelector(state => state.productsListReducer);
+	const { search } = useAppSelector(state => state.inputReducer);
+	const { products, loading } = useAppSelector(state => ({
+		products: state.productsListReducer.entities.products.filter(obj =>
+			obj.title.toLowerCase().includes(search.toLowerCase()),
+		),
+		loading: state.productsListReducer.loading,
+	}));
 
 	return (
 		<main className={styles.main}>
@@ -14,8 +20,8 @@ export const Main = () => {
 				<Spinner />
 			) : (
 				<div className={styles.cards}>
-					{entities &&
-						entities.products.map(item => {
+					{products &&
+						products.map(item => {
 							return (
 								<Card key={item.id} imageUrl={item.images} title={item.title} price={item.price} />
 							);

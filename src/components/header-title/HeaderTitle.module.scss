@@ -1,0 +1,24 @@
+@import '../../mixins/mixins.scss';
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logoImg {
+	margin-right: 15px;
+}
+
+.logoText {
+	display: flex;
+	flex-direction: column;
+}
+
+.logoTitle {
+	@include text-800;
+}
+
+.logoSubtitle {
+	@include text-400;
+	color: #7b7b7b;
+}

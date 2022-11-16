@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Header } from './components/header/header';
-import { Main } from './components/main/Main';
-import { Navigation } from './components/navigation/Navigation';
 import { productsList } from './redux-store/get-all-products-slice/getAllProductsSlice';
 import { useAppDispatch } from './redux-store/redux-hooks';
+import { Layout } from './components/Layout/Layout';
+import { Route, Routes } from 'react-router-dom';
+import { Products } from './pages/Products';
 
 function App() {
 	const dispatch = useAppDispatch();
@@ -13,11 +13,12 @@ function App() {
 	}, [dispatch]);
 
 	return (
-		<div className='app'>
-			<Header />
-			<Navigation />
-			<Main />
-		</div>
+		<Routes>
+			<Route path='/' element={<Layout />}>
+				<Route index element={<Products />} />
+				<Route path='cart' element={<div>cart</div>} />
+			</Route>
+		</Routes>
 	);
 }
 

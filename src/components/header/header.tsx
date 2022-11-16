@@ -7,6 +7,7 @@ import { Input } from '../input/Input';
 import pizza from '../../assets/pizza.svg';
 import { useAppDispatch } from '../../redux-store/redux-hooks';
 import { clearInput } from '../../redux-store/input-slice/inputSlice';
+import { HeaderTitle } from '../header-title/HeaderTitle';
 
 export const Header = () => {
 	const dispatch = useAppDispatch();
@@ -17,13 +18,7 @@ export const Header = () => {
 
 	return (
 		<header className={styles.header}>
-			<div className={styles.logo}>
-				<img className={styles.logoImg} src={pizza} alt='pizza' />
-				<div className={styles.logoText}>
-					<p className={styles.logoTitle}>REACT SHOP</p>
-					<p className={styles.logoSubtitle}>самый лучший магазин во вселенной</p>
-				</div>
-			</div>
+			<HeaderTitle text='самый лучший магазин во вселенной' />
 			<Input placeholder='Поиск товара...' type='text' onClick={handleInputClick} />
 			<Button disabled={false} type='button' size='middle'>
 				<div className={styles.boxPrice}>
