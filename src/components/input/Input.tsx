@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
 import styles from './Input.module.scss';
 import { BiSearchAlt } from 'react-icons/bi';
-import { HiXMark } from 'react-icons/hi2';
 import { useAppDispatch, useAppSelector } from '../../redux-store/redux-hooks';
 import { setInput } from '../../redux-store/input-slice/inputSlice';
+import mark from '../../assets/mark.svg';
 
 interface IInput {
 	placeholder: string;
@@ -29,7 +29,11 @@ export const Input: FC<IInput> = ({ placeholder, type, onClick }) => {
 				placeholder={placeholder}
 				type={type}
 			/>
-			<HiXMark onClick={onClick} className={styles.inputMark} />
+			<button
+				style={{ backgroundImage: `url(${mark})` }}
+				onClick={onClick}
+				className={styles.inputMark}
+			></button>
 		</div>
 	);
 };

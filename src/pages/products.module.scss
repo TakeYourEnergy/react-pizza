@@ -1,0 +1,32 @@
+@import '../mixins/mixins.scss';
+
+.boxPrice {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.price {
+	@include text-700;
+}
+
+.rub {
+	@include text-700;
+	margin-right: 13px;
+}
+
+.emptyBar {
+	width: 1px;
+	height: 25px;
+	background: rgba(255, 255, 255, 0.25);
+	margin-right: 13px;
+}
+
+.shopCart {
+	@include text-700;
+	margin-right: 8px;
+}
+
+.count {
+	@include text-700;
+}

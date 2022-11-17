@@ -4,6 +4,7 @@ import { useAppDispatch } from './redux-store/redux-hooks';
 import { Layout } from './components/Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
 import { Products } from './pages/Products';
+import { Cart } from './pages/Cart';
 
 function App() {
 	const dispatch = useAppDispatch();
@@ -16,7 +17,8 @@ function App() {
 		<Routes>
 			<Route path='/' element={<Layout />}>
 				<Route index element={<Products />} />
-				<Route path='cart' element={<div>cart</div>} />
+				<Route path='cart' element={<Cart />} />
+				<Route path='*' element={<div>404</div>}/>
 			</Route>
 		</Routes>
 	);

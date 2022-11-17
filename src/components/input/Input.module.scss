@@ -14,13 +14,20 @@
 .inputIcons,
 .inputMark {
 	@include text-400;
-	width: 22px;
-	height: 22px;
+	width: 15px;
+	height: 15px;
 	opacity: 0.3;
 }
 
 .inputMark {
 	cursor: pointer;
+	border: none;
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
 }
 
 .input {
