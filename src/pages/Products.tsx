@@ -25,7 +25,7 @@ export const Products = () => {
 		};
 
 	return (
-		<div>
+		<div style={{position: 'relative'}}>
 			<Header>
 				<HeaderTitle text='самый лучший магазин во вселенной' />
 				<Input placeholder='Поиск товара...' type='text' onClick={handleInputClick} />
