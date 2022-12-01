@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface IStateModal {
 	firstStateModal: boolean;
-	textModal: string;
+	textModal: 'популярности' | 'цене' | 'алфавиту' | undefined;
 }
 
 const initialState: IStateModal = {
@@ -14,8 +14,8 @@ export const stateModalSlice = createSlice({
 	name: '@@stateModal',
 	initialState,
 	reducers: {
-		setStateModal: (state, action) => {
-			state.firstStateModal = action.payload;
+		setStateModal: state => {
+			state.firstStateModal = !state.firstStateModal;
 		},
 		setTextModal: (state, action) => {
 			state.textModal = action.payload;

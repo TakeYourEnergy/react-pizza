@@ -1,7 +1,6 @@
 .slider {
 	width: 280px;
 	position: relative;
-	z-index: 0;
 }
 
 .img {
@@ -10,7 +9,6 @@
 	object-fit: cover;
 	margin-bottom: 10px;
 	border-radius: 10px;
-	z-index: -10;
 }
 
 .prev,
@@ -35,9 +33,9 @@
 }
 
 .prev {
-	left: 25px;
+	left: 5px;
 }
 
 .next {
-	right: 25px;
+	right: 5px;
 }

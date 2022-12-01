@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { config, checkResponse } from '../../utils/api';
 
-interface IProduct {
+export interface IProduct {
 	brand: string;
 	category: string;
 	description: string;

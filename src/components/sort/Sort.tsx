@@ -9,19 +9,18 @@ import styles from './sort.module.scss';
 export const Sort = () => {
 	const { firstStateModal, textModal } = useAppSelector(state => ({
 		firstStateModal: state.stateModalReducer.firstStateModal,
-		textModal: state.stateModalReducer.textModal
+		textModal: state.stateModalReducer.textModal,
 	}));
 	const dispatch = useAppDispatch();
-
 	const arrSort = ['популярности', 'цене', 'алфавиту'];
 
 	const handleClick = () => {
-		dispatch(setStateModal(true));
+		dispatch(setStateModal());
 	};
 
 	const handleClickOnItem = (e: React.MouseEvent<HTMLLIElement>) => {
 		dispatch(setTextModal(e.currentTarget.textContent));
-		dispatch(setStateModal(false));
+		dispatch(setStateModal());
 	};
 
 	return (
